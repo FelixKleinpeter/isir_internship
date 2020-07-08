@@ -46,7 +46,7 @@ def forward_feature_selection(X, y, display=False):
 # Variable Amount (moyenne normalisee de la variable)
 def variable_mean_choice(X, y, display = False):
     
-    return X.columns[np.argmax([np.mean(X[v]) / (np.max(X[v]) - np.min(X[v])) for v in X.columns])]
+    return X.columns[np.argmax([np.mean(X[v]) / (0.001 + np.max(X[v]) - np.min(X[v])) for v in X.columns])]
 
 # Random Variable Choice
 def random_variable_choice(X, y, display = False):

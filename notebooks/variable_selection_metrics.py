@@ -19,7 +19,8 @@ def user_questions(data, metric, display = False):
         if avg > 1:
             avg = int(avg)
         
-        y_or_n = input(question_from_v(v, threshold=avg))
+        y_or_n = input(str(v)+"? (y/n)")
+        # y_or_n = input(question_from_v(v, threshold=avg))
         if y_or_n == "y" or y_or_n == "Y" or y_or_n == "yes" or y_or_n == "Yes" :
             new_data = data_without_v(new_data, v, avg, lower=False)
         elif y_or_n == "n" or y_or_n == "N" or y_or_n == "no" or y_or_n == "No" :
