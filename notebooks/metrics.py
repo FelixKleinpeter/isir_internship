@@ -15,8 +15,8 @@ def random_forest(X, y, display=False, max_depth=7):
     clf = RandomForestClassifier(max_depth=max_depth, random_state=0)
     clf.fit(X, y)
     v = X.columns[np.argmax(clf.feature_importances_)]
-    if display :
-        plt_bar(X, clf)
+    #if display :
+    #    plt_bar(X, clf)
     return v
 
 # Backward Feature Elimination
