@@ -52,7 +52,11 @@ def random_questions(data, metric, display = False, tree = None):
         middle = (avg) / (0.0001 + np.max(new_data[v]) - np.min(new_data[v]))
         if np.random.rand() < middle:
             lower = False
-        new_data = data_without_v(new_data, v, avg, lower=lower)
+        new_data_ = data_without_v(new_data, v, avg, lower=lower)
+        if new_data_["item"].size == 0:
+            return new_data, question_count+1
+        else:
+            new_data = new_data_
         if t != None and t.v != -1:
             if lower:
                 t = t.left
